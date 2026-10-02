@@ -1,0 +1,1102 @@
+SYED-ALIYAN-PORTFOLIO
+│
+├── index.html
+│
+└── profile.jpg
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Syed Aliyan | Web Developer</title>
+
+<meta name="description" content="Syed Aliyan — Web Developer creating modern, responsive and professional websites for businesses, brands and creators.">
+
+<style>
+/* =========================================================
+   SYED ALIYAN — PROFESSIONAL DEVELOPER PORTFOLIO
+   Single-file GitHub Pages website
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#050608;
+    color:#f5f5f7;
+    line-height:1.6;
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+.container{
+    width:min(1120px,92%);
+    margin:auto;
+}
+
+/* ---------- BACKGROUND ---------- */
+
+body::before{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    top:-180px;
+    right:-120px;
+    background:#6c4cff;
+    opacity:.10;
+    filter:blur(130px);
+    border-radius:50%;
+    pointer-events:none;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    width:400px;
+    height:400px;
+    bottom:-160px;
+    left:-120px;
+    background:#00d9b5;
+    opacity:.06;
+    filter:blur(130px);
+    border-radius:50%;
+    pointer-events:none;
+}
+
+/* ---------- NAVBAR ---------- */
+
+.navbar{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    height:76px;
+    border-bottom:1px solid rgba(255,255,255,.08);
+    background:rgba(5,6,8,.78);
+    backdrop-filter:blur(18px);
+}
+
+.nav-inner{
+    height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-size:20px;
+    font-weight:900;
+    letter-spacing:.5px;
+}
+
+.logo span{
+    color:#8b72ff;
+}
+
+.nav-links{
+    display:flex;
+    gap:28px;
+    list-style:none;
+}
+
+.nav-links a{
+    color:#aeb3bf;
+    font-size:14px;
+    transition:.25s;
+}
+
+.nav-links a:hover{
+    color:white;
+}
+
+.nav-btn{
+    padding:11px 17px;
+    border-radius:10px;
+    background:white;
+    color:#050608!important;
+    font-weight:800;
+}
+
+/* ---------- HERO ---------- */
+
+.hero{
+    min-height:calc(100vh - 76px);
+    display:grid;
+    grid-template-columns:1.15fr .85fr;
+    gap:60px;
+    align-items:center;
+    padding:80px 0;
+}
+
+.availability{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:7px 12px;
+    border:1px solid #30333d;
+    border-radius:100px;
+    background:#0d0f14;
+    color:#c0b7ff;
+    font-size:13px;
+}
+
+.dot{
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:#58e2ba;
+    box-shadow:0 0 12px #58e2ba;
+}
+
+.hero h1{
+    font-size:clamp(44px,7vw,78px);
+    line-height:1.02;
+    letter-spacing:-4px;
+    margin:22px 0;
+}
+
+.gradient{
+    background:linear-gradient(
+        90deg,
+        #ffffff,
+        #a995ff,
+        #61e1c0
+    );
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
+
+.hero-description{
+    color:#9da4b0;
+    font-size:18px;
+    max-width:650px;
+}
+
+.buttons{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-top:30px;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:13px 19px;
+    border-radius:12px;
+    border:1px solid white;
+    background:white;
+    color:#050608;
+    font-weight:800;
+    transition:.25s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+.btn-outline{
+    background:transparent;
+    color:white;
+    border-color:#333742;
+}
+
+.hero-stats{
+    display:flex;
+    gap:35px;
+    margin-top:40px;
+}
+
+.stat strong{
+    display:block;
+    font-size:21px;
+}
+
+.stat span{
+    color:#777e8b;
+    font-size:12px;
+}
+
+/* ---------- PROFILE ---------- */
+
+.profile-area{
+    display:flex;
+    justify-content:center;
+    position:relative;
+}
+
+.profile-glow{
+    position:absolute;
+    width:320px;
+    height:320px;
+    border-radius:50%;
+    background:linear-gradient(
+        135deg,
+        #795dff,
+        #21d7b0
+    );
+    opacity:.22;
+    filter:blur(45px);
+}
+
+.profile{
+    position:relative;
+    width:min(370px,90%);
+    aspect-ratio:3/4;
+    object-fit:cover;
+    border-radius:28px;
+    border:1px solid #363945;
+    box-shadow:0 35px 100px rgba(0,0,0,.75);
+}
+
+/* ---------- SECTIONS ---------- */
+
+section{
+    padding:100px 0;
+}
+
+.section-label{
+    color:#9d8cff;
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.section-title{
+    font-size:44px;
+    line-height:1.1;
+    letter-spacing:-2px;
+    margin:10px 0 14px;
+}
+
+.section-description{
+    color:#969eaa;
+    max-width:700px;
+}
+
+/* ---------- SERVICES ---------- */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+    margin-top:35px;
+}
+
+.card{
+    padding:27px;
+    border:1px solid #252832;
+    border-radius:20px;
+    background:linear-gradient(
+        180deg,
+        #11131a,
+        #0b0d11
+    );
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    border-color:#454956;
+}
+
+.card-icon{
+    font-size:28px;
+    margin-bottom:17px;
+}
+
+.card h3{
+    margin-bottom:9px;
+}
+
+.card p{
+    color:#949ba7;
+    font-size:14px;
+}
+
+/* ---------- PROJECTS ---------- */
+
+.projects{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+    margin-top:35px;
+}
+
+.project{
+    overflow:hidden;
+    border:1px solid #272a35;
+    border-radius:22px;
+    background:#0d0f14;
+}
+
+.project-preview{
+    height:230px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:
+        radial-gradient(circle at 30% 20%,#604cff55,transparent 30%),
+        linear-gradient(135deg,#161228,#09221e);
+    font-size:27px;
+    font-weight:900;
+    letter-spacing:1px;
+}
+
+.project-content{
+    padding:23px;
+}
+
+.project-content p{
+    color:#949ba7;
+    margin-top:7px;
+    font-size:14px;
+}
+
+.tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:7px;
+    margin-top:15px;
+}
+
+.tag{
+    padding:5px 10px;
+    border:1px solid #303440;
+    border-radius:100px;
+    color:#c0c5ce;
+    font-size:11px;
+}
+
+/* ---------- ABOUT ---------- */
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+    margin-top:35px;
+}
+
+.about-card{
+    padding:30px;
+    border:1px solid #272a35;
+    border-radius:22px;
+    background:#0e1015;
+}
+
+.about-card p{
+    color:#979eaa;
+}
+
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:9px;
+    margin-top:20px;
+}
+
+.skill{
+    padding:9px 12px;
+    border:1px solid #303440;
+    background:#15171e;
+    border-radius:11px;
+    color:#d6dae2;
+    font-size:13px;
+}
+
+/* ---------- PROCESS ---------- */
+
+.process{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+    margin-top:35px;
+}
+
+.step{
+    padding:22px;
+    border:1px solid #262a34;
+    border-radius:18px;
+    background:#0d0f14;
+}
+
+.step-number{
+    color:#9c8aff;
+    font-weight:900;
+    font-size:13px;
+}
+
+.step h3{
+    margin:10px 0 6px;
+}
+
+.step p{
+    color:#929aa7;
+    font-size:13px;
+}
+
+/* ---------- CTA ---------- */
+
+.cta{
+    padding:48px;
+    border-radius:27px;
+    border:1px solid #303441;
+    background:
+        radial-gradient(
+            circle at 85% 15%,
+            #352769,
+            transparent 35%
+        ),
+        #101218;
+}
+
+.cta h2{
+    font-size:42px;
+    letter-spacing:-1.5px;
+}
+
+.cta p{
+    color:#969eaa;
+    margin-top:8px;
+}
+
+/* ---------- FOOTER ---------- */
+
+footer{
+    padding:35px 0;
+    border-top:1px solid #171a21;
+    color:#747c88;
+    font-size:13px;
+}
+
+.footer-inner{
+    display:flex;
+    justify-content:space-between;
+}
+
+/* ---------- MOBILE ---------- */
+
+@media(max-width:800px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero{
+        grid-template-columns:1fr;
+        padding:55px 0;
+    }
+
+    .profile-area{
+        order:-1;
+    }
+
+    .profile{
+        width:270px;
+    }
+
+    .hero h1{
+        font-size:50px;
+        letter-spacing:-2.5px;
+    }
+
+    .cards,
+    .projects,
+    .about-grid{
+        grid-template-columns:1fr;
+    }
+
+    .process{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .section-title{
+        font-size:37px;
+    }
+
+    .cta h2{
+        font-size:34px;
+    }
+
+    .footer-inner{
+        display:block;
+    }
+}
+
+@media(max-width:480px){
+
+    .hero h1{
+        font-size:43px;
+    }
+
+    .hero-description{
+        font-size:16px;
+    }
+
+    .hero-stats{
+        gap:18px;
+    }
+
+    .process{
+        grid-template-columns:1fr;
+    }
+
+    .cta{
+        padding:30px 22px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+<div class="container nav-inner">
+
+<a href="#" class="logo">
+SYED ALIYAN<span>.</span>
+</a>
+
+<ul class="nav-links">
+
+<li><a href="#services">Services</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#process">Process</a></li>
+<li><a href="#contact" class="nav-btn">Hire Me</a></li>
+
+</ul>
+
+</div>
+
+</header>
+
+
+<main>
+
+<!-- ================= HERO ================= -->
+
+<section>
+
+<div class="container hero">
+
+<div>
+
+<div class="availability">
+<span class="dot"></span>
+Available for freelance projects
+</div>
+
+<h1>
+
+I build
+<span class="gradient">websites</span>
+that make businesses look professional.
+
+</h1>
+
+<p class="hero-description">
+
+I'm Syed Aliyan, a web developer focused on creating
+modern, responsive and professional websites for
+businesses, brands and creators.
+
+</p>
+
+<div class="buttons">
+
+<a href="#contact" class="btn">
+Start a Project →
+</a>
+
+<a href="#projects" class="btn btn-outline">
+View My Work
+</a>
+
+</div>
+
+<div class="hero-stats">
+
+<div class="stat">
+<strong>Responsive</strong>
+<span>Mobile-first</span>
+</div>
+
+<div class="stat">
+<strong>Modern</strong>
+<span>Clean UI/UX</span>
+</div>
+
+<div class="stat">
+<strong>Custom</strong>
+<span>Built for you</span>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="profile-area">
+
+<div class="profile-glow"></div>
+
+<!-- IMPORTANT:
+     Change profile.jpg with your own uploaded photo.
+-->
+
+<img
+src="profile.jpg"
+alt="Syed Aliyan — Web Developer"
+class="profile"
+>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= SERVICES ================= -->
+
+<section id="services">
+
+<div class="container">
+
+<div class="section-label">
+What I Do
+</div>
+
+<h2 class="section-title">
+Websites built to win trust.
+</h2>
+
+<p class="section-description">
+
+I create professional digital experiences that help
+businesses present themselves clearly and professionally
+online.
+
+</p>
+
+
+<div class="cards">
+
+<div class="card">
+
+<div class="card-icon">✦</div>
+
+<h3>Business Websites</h3>
+
+<p>
+Professional websites for companies, local businesses,
+services and personal brands.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="card-icon">◈</div>
+
+<h3>Landing Pages</h3>
+
+<p>
+Focused landing pages designed around a clear goal,
+offer or marketing campaign.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="card-icon">◎</div>
+
+<h3>E-commerce</h3>
+
+<p>
+Modern online stores with product presentation,
+responsive design and strong calls-to-action.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= PROJECTS ================= -->
+
+<section id="projects">
+
+<div class="container">
+
+<div class="section-label">
+Featured Work
+</div>
+
+<h2 class="section-title">
+Projects that show what I can build.
+</h2>
+
+<p class="section-description">
+
+A selection of projects and concepts created during
+my development journey.
+
+</p>
+
+
+<div class="projects">
+
+
+<div class="project">
+
+<div class="project-preview">
+SYED COLLECTION
+</div>
+
+<div class="project-content">
+
+<h3>Fashion E-commerce Store</h3>
+
+<p>
+Premium fashion storefront concept with a modern
+luxury visual direction.
+</p>
+
+<div class="tags">
+
+<span class="tag">E-commerce</span>
+<span class="tag">Responsive</span>
+<span class="tag">UI/UX</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="project">
+
+<div class="project-preview">
+VANTA//DROP
+</div>
+
+<div class="project-content">
+
+<h3>Game Interface Concept</h3>
+
+<p>
+Futuristic interface concept for an original
+multiplayer gaming project.
+</p>
+
+<div class="tags">
+
+<span class="tag">Game UI</span>
+<span class="tag">Mobile</span>
+<span class="tag">Interactive</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+<div class="container">
+
+<div class="section-label">
+About Me
+</div>
+
+<h2 class="section-title">
+Turning ideas into digital experiences.
+</h2>
+
+
+<div class="about-grid">
+
+
+<div class="about-card">
+
+<h3>
+Hi, I'm Syed Aliyan.
+</h3>
+
+<br>
+
+<p>
+
+I'm building my career in web development and
+creating practical websites for businesses,
+brands and personal projects.
+
+<br><br>
+
+My focus is clean design, responsive layouts,
+professional presentation and a smooth user
+experience.
+
+</p>
+
+</div>
+
+
+<div class="about-card">
+
+<h3>
+My Toolkit
+</h3>
+
+<div class="skills">
+
+<span class="skill">HTML</span>
+<span class="skill">CSS</span>
+<span class="skill">JavaScript</span>
+<span class="skill">Responsive Design</span>
+<span class="skill">GitHub</span>
+<span class="skill">Shopify</span>
+<span class="skill">UI Design</span>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= PROCESS ================= -->
+
+<section id="process">
+
+<div class="container">
+
+<div class="section-label">
+How It Works
+</div>
+
+<h2 class="section-title">
+From idea to website.
+</h2>
+
+
+<div class="process">
+
+
+<div class="step">
+
+<div class="step-number">
+01
+</div>
+
+<h3>Discuss</h3>
+
+<p>
+We understand your business, goals and website
+requirements.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+02
+</div>
+
+<h3>Design</h3>
+
+<p>
+The visual direction and structure are planned
+around your brand.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+03
+</div>
+
+<h3>Build</h3>
+
+<p>
+The website is developed with responsive layouts
+and clean code.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+04
+</div>
+
+<h3>Launch</h3>
+
+<p>
+The finished website is prepared for publishing
+and your audience.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+<div class="container">
+
+<div class="cta">
+
+<div class="section-label">
+Have a Project?
+</div>
+
+<h2>
+Let's build something great.
+</h2>
+
+<p>
+Have an idea for a website? Let's discuss what you need.
+</p>
+
+
+<div class="buttons">
+
+<!-- Replace the email below -->
+
+<a
+href="mailto:YOUR_EMAIL@example.com"
+class="btn"
+>
+Email Me
+</a>
+
+
+<!-- Replace with your real LinkedIn URL -->
+
+<a
+href="https://www.linkedin.com/"
+target="_blank"
+class="btn btn-outline"
+>
+LinkedIn
+</a>
+
+
+<!-- Replace with your real GitHub URL -->
+
+<a
+href="https://github.com/"
+target="_blank"
+class="btn btn-outline"
+>
+GitHub
+</a>
+
+
+<!-- Replace with your WhatsApp number -->
+
+<a
+href="https://wa.me/923000000000"
+target="_blank"
+class="btn btn-outline"
+>
+WhatsApp
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div class="container footer-inner">
+
+<div>
+© 2026 Syed Aliyan. All rights reserved.
+</div>
+
+<div>
+Web Developer • Pakistan
+</div>
+
+</div>
+
+</footer>
+
+
+</body>
+  </html>
