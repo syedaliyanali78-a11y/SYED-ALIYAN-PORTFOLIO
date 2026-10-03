@@ -11,183 +11,478 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:#0b0a08;color:#f4f0e8;font-family:'DM Sans',Arial;overflow-x:hidden}
-:root{--gold:#c9aa72;--light:#f4f0e8;--muted:#96928a;--line:#c9aa7238;--panel:#12110e}
+
+:root{
+--gold:#c9aa72;
+--light:#f4f0e8;
+--muted:#96928a;
+--line:#c9aa7238;
+--panel:#12110e
+}
+
 a{text-decoration:none;color:inherit}
 
 body:before{
 content:"";position:fixed;inset:0;z-index:-2;
 background:
 radial-gradient(circle at 10% 15%,#c9aa7212,transparent 28%),
-radial-gradient(circle at 90% 80%,#fff8e608,transparent 30%);
+radial-gradient(circle at 90% 80%,#fff8e608,transparent 30%)
 }
 
 body:after{
 content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
-background:linear-gradient(90deg,transparent 49.9%,#ffffff03 50%,transparent 50.1%);
+background:linear-gradient(90deg,transparent 49.9%,#ffffff03 50%,transparent 50.1%)
 }
+
+/* WELCOME */
 
 #welcome{
 position:fixed;inset:0;z-index:9999;background:#090806;
 display:grid;place-items:center;text-align:center;
 transition:.7s ease
 }
-#welcome.hide{opacity:0;visibility:hidden;transform:scale(1.03)}
+
+#welcome.hide{
+opacity:0;
+visibility:hidden;
+transform:scale(1.03)
+}
+
 .wbox{animation:enter 1.2s ease}
-.wbox .line{width:70px;height:1px;background:var(--gold);margin:18px auto}
-.wbox small{letter-spacing:7px;color:#aaa;font-size:9px}
+
+.wbox .line{
+width:70px;height:1px;background:var(--gold);margin:18px auto
+}
+
+.wbox small{
+letter-spacing:7px;color:#aaa;font-size:9px
+}
+
 .wbox h1{
 font-family:'Playfair Display',serif;
 font-size:clamp(38px,8vw,75px);
 letter-spacing:3px;
 font-weight:500
 }
-.wbox p{font-size:9px;letter-spacing:5px;color:var(--gold)}
-@keyframes enter{from{opacity:0;transform:translateY(18px);letter-spacing:8px}to{opacity:1;transform:none}}
+
+.wbox p{
+font-size:9px;
+letter-spacing:5px;
+color:var(--gold)
+}
+
+@keyframes enter{
+from{opacity:0;transform:translateY(18px);letter-spacing:8px}
+to{opacity:1;transform:none}
+}
+
+/* NAV */
 
 nav{
 position:fixed;top:0;width:100%;z-index:1000;
-padding:20px 7%;display:flex;justify-content:space-between;align-items:center;
-background:#0b0a08e8;backdrop-filter:blur(18px);
+padding:20px 7%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:#0b0a08e8;
+backdrop-filter:blur(18px);
 border-bottom:1px solid #ffffff0c
 }
-.logo{font-weight:700;letter-spacing:4px;font-size:13px}
+
+.logo{
+font-weight:700;
+letter-spacing:4px;
+font-size:13px
+}
+
 .logo span,.tag,strong{color:var(--gold)}
-.nav a{margin-left:22px;font-size:11px;color:#aaa;transition:.3s}
+
+.nav a{
+margin-left:22px;
+font-size:11px;
+color:#aaa;
+transition:.3s
+}
+
 .nav a:hover{color:var(--light)}
 
+/* GENERAL */
+
 section{padding:105px 7%}
-.title{text-align:center;margin-bottom:45px}
+
+.title{
+text-align:center;
+margin-bottom:45px
+}
+
 .title h2{
 font-family:'Playfair Display',serif;
-font-weight:500;font-size:clamp(38px,5vw,58px)
+font-weight:500;
+font-size:clamp(38px,5vw,58px)
 }
+
 .title span{color:var(--gold)}
-.title p,.card p{color:var(--muted);margin-top:9px}
+
+.title p,.card p{
+color:var(--muted);
+margin-top:9px
+}
 
 .card,.btn{
 border:1px solid var(--line);
 background:linear-gradient(145deg,#171511,#0f0e0b);
 transition:.4s
 }
+
 .card{
-border-radius:4px;padding:27px;
+border-radius:4px;
+padding:27px;
 box-shadow:inset 0 1px #fff1,0 15px 45px #0008
 }
+
 .card:hover{
 transform:translateY(-7px);
 border-color:#c9aa7275;
 box-shadow:0 22px 60px #000,0 0 30px #c9aa7210
 }
+
 .btn{
-display:inline-block;border-radius:2px;
-padding:12px 23px;margin:5px;
-font-size:10px;letter-spacing:1.5px;text-transform:uppercase
+display:inline-block;
+border-radius:2px;
+padding:12px 23px;
+margin:5px;
+font-size:10px;
+letter-spacing:1.5px;
+text-transform:uppercase
 }
-.btn:hover{background:#c9aa72;color:#0b0a08;transform:translateY(-3px)}
+
+.btn:hover{
+background:#c9aa72;
+color:#0b0a08;
+transform:translateY(-3px)
+}
+
+/* HERO */
 
 .hero{
-min-height:100vh;padding-top:145px;
-display:flex;align-items:center;justify-content:space-between;gap:70px
+min-height:100vh;
+padding-top:145px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:70px
 }
-.hero small{color:var(--gold);letter-spacing:5px;font-size:9px}
+
+.hero small{
+color:var(--gold);
+letter-spacing:5px;
+font-size:9px
+}
+
 .hero h1{
 font-family:'Playfair Display',serif;
 font-size:clamp(58px,9vw,105px);
-line-height:.9;font-weight:500;margin:17px 0
+line-height:.9;
+font-weight:500;
+margin:17px 0
 }
-.hero h1 span{color:var(--gold)}
-.hero h2{font-size:22px;font-weight:400;color:#c7c3bb}
-.hero p{max-width:600px;line-height:1.9;color:#999;margin:22px 0}
 
-.avatar{width:290px;height:290px;position:relative;flex:none}
+.hero h1 span{color:var(--gold)}
+
+.hero h2{
+font-size:22px;
+font-weight:400;
+color:#c7c3bb
+}
+
+.hero p{
+max-width:600px;
+line-height:1.9;
+color:#999;
+margin:22px 0
+}
+
+/* PROFILE */
+
+.avatar{
+width:290px;
+height:290px;
+position:relative;
+flex:none
+}
+
 .avatar:before{
-content:"";position:absolute;inset:-14px;
-border:1px solid var(--line);border-radius:50%;
+content:"";
+position:absolute;
+inset:-14px;
+border:1px solid var(--line);
+border-radius:50%;
 animation:rotate 15s linear infinite
 }
+
 .avatar:after{
-content:"SYED ALIYAN";position:absolute;right:-35px;bottom:15px;
-font-size:8px;letter-spacing:4px;color:var(--gold);
+content:"SYED ALIYAN";
+position:absolute;
+right:-35px;
+bottom:15px;
+font-size:8px;
+letter-spacing:4px;
+color:var(--gold);
 transform:rotate(-90deg)
 }
+
 .photo{
-position:absolute;inset:10px;padding:5px;
+position:absolute;
+inset:10px;
+padding:5px;
 background:linear-gradient(135deg,#80683e,var(--gold),#5d4a2b);
 border-radius:50%;
 box-shadow:0 25px 70px #000
 }
-.photo img{width:100%;height:100%;object-fit:cover;border-radius:50%;display:block}
-@keyframes rotate{to{transform:rotate(360deg)}}
+
+.photo img{
+width:100%;
+height:100%;
+object-fit:cover;
+border-radius:50%;
+display:block
+}
+
+@keyframes rotate{
+to{transform:rotate(360deg)}
+}
+
+/* MARQUEE */
 
 .marquee{
-border-block:1px solid #ffffff10;overflow:hidden;white-space:nowrap;
-padding:14px;color:#777;font-size:9px;letter-spacing:5px
+border-block:1px solid #ffffff10;
+overflow:hidden;
+white-space:nowrap;
+padding:14px;
+color:#777;
+font-size:9px;
+letter-spacing:5px
 }
-.marquee div{display:inline-block;animation:move 20s linear infinite}
-@keyframes move{to{transform:translateX(-50%)}}
 
-.grid,.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.bar{height:3px;background:#ffffff12;border-radius:5px;margin-top:15px}
-.bar i{display:block;height:100%;background:var(--gold);border-radius:5px}
+.marquee div{
+display:inline-block;
+animation:move 20s linear infinite
+}
 
-.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-.project{min-height:215px;display:flex;flex-direction:column;justify-content:space-between}
-.tag{font-size:9px;letter-spacing:3px;color:var(--gold);margin-bottom:14px}
-.project h3{font-family:'Playfair Display',serif;font-size:24px;font-weight:500}
+@keyframes move{
+to{transform:translateX(-50%)}
+}
+
+/* SKILLS */
+
+.grid,.skills{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px
+}
+
+.bar{
+height:3px;
+background:#ffffff12;
+border-radius:5px;
+margin-top:15px
+}
+
+.bar i{
+display:block;
+height:100%;
+background:var(--gold);
+border-radius:5px
+}
+
+/* PROJECTS */
+
+.projects{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:20px
+}
+
+.project{
+min-height:215px;
+display:flex;
+flex-direction:column;
+justify-content:space-between
+}
+
+.tag{
+font-size:9px;
+letter-spacing:3px;
+color:var(--gold);
+margin-bottom:14px
+}
+
+.project h3{
+font-family:'Playfair Display',serif;
+font-size:24px;
+font-weight:500
+}
+
+/* TERMINAL */
 
 .terminal{
-background:#080806;border:1px solid #ffffff10;border-radius:4px;
-padding:28px;color:#858179;font:13px/2 monospace
+background:#080806;
+border:1px solid #ffffff10;
+border-radius:4px;
+padding:28px;
+color:#858179;
+font:13px/2 monospace
 }
+
 .terminal b{color:var(--gold)}
 
+/* CONTACT */
+
 .contact{text-align:center}
-.social{display:flex;justify-content:center;flex-wrap:wrap}
-footer{
-text-align:center;padding:30px;border-top:1px solid #ffffff0d;
-color:#666;font-size:10px;letter-spacing:1px
+
+.social{
+display:flex;
+justify-content:center;
+flex-wrap:wrap
 }
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:30px;
+border-top:1px solid #ffffff0d;
+color:#666;
+font-size:10px;
+letter-spacing:1px
+}
+
+/* COMING SOON */
 
 #soon{
-position:fixed;inset:0;z-index:5000;display:none;place-items:center;
-padding:20px;background:#050403dd;backdrop-filter:blur(14px)
+position:fixed;
+inset:0;
+z-index:5000;
+display:none;
+place-items:center;
+padding:20px;
+background:#050403dd;
+backdrop-filter:blur(14px)
 }
+
 #soon.show{display:grid}
+
 .pop{
-width:min(460px,100%);text-align:center;padding:45px 25px;
-border:1px solid var(--line);background:#11100d;
-box-shadow:0 30px 100px #000;border-radius:4px;
+width:min(460px,100%);
+text-align:center;
+padding:45px 25px;
+border:1px solid var(--line);
+background:#11100d;
+box-shadow:0 30px 100px #000;
+border-radius:4px;
 animation:pop .4s ease
 }
-.pop h2{
-font-family:'Playfair Display',serif;font-size:clamp(38px,8vw,58px);
-font-weight:500;color:var(--gold)
-}
-.pop p{color:#999;margin:10px}
-.close{padding:8px 17px;font-size:9px}
-@keyframes pop{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:none}}
 
-.reveal{opacity:0;transform:translateY(25px);transition:.8s}
-.reveal.show{opacity:1;transform:none}
+.pop h2{
+font-family:'Playfair Display',serif;
+font-size:clamp(38px,8vw,58px);
+font-weight:500;
+color:var(--gold)
+}
+
+.pop p{
+color:#999;
+margin:10px
+}
+
+/* FIXED CLOSE BUTTON */
+
+.close{
+padding:9px 19px;
+font-size:9px;
+letter-spacing:2px;
+color:#c9aa72 !important;
+background:#050403 !important;
+border:1px solid #c9aa72 !important;
+border-radius:2px;
+font-weight:600;
+cursor:pointer
+}
+
+.close:hover{
+color:#050403 !important;
+background:#c9aa72 !important;
+border-color:#c9aa72 !important;
+box-shadow:0 8px 25px #c9aa7230
+}
+
+@keyframes pop{
+from{opacity:0;transform:translateY(25px)}
+to{opacity:1;transform:none}
+}
+
+/* REVEAL */
+
+.reveal{
+opacity:0;
+transform:translateY(25px);
+transition:.8s
+}
+
+.reveal.show{
+opacity:1;
+transform:none
+}
+
+/* CURSOR */
 
 #cursor{
-position:fixed;width:12px;height:12px;border:1px solid var(--gold);
-border-radius:50%;pointer-events:none;z-index:99999;
+position:fixed;
+width:12px;
+height:12px;
+border:1px solid var(--gold);
+border-radius:50%;
+pointer-events:none;
+z-index:99999;
 transform:translate(-50%,-50%)
 }
 
+/* MOBILE */
+
 @media(max-width:850px){
+
 .nav{display:none}
-.hero{flex-direction:column;text-align:center;padding-top:135px}
-.avatar{transform:scale(.85);margin-top:-5px}
-.grid,.skills,.projects{grid-template-columns:1fr}
-section{padding:80px 5%}
+
+.hero{
+flex-direction:column;
+text-align:center;
+padding-top:135px
 }
-@media(max-width:600px){#cursor{display:none}}
+
+.avatar{
+transform:scale(.85);
+margin-top:-5px
+}
+
+.grid,.skills,.projects{
+grid-template-columns:1fr
+}
+
+section{
+padding:80px 5%
+}
+
+}
+
+@media(max-width:600px){
+#cursor{display:none}
+}
 </style>
 </head>
 
 <body>
+
+<!-- WELCOME -->
 
 <div id="welcome">
 <div class="wbox">
@@ -198,54 +493,126 @@ section{padding:80px 5%}
 </div>
 </div>
 
+<!-- NAVIGATION -->
+
 <nav>
 <div class="logo">SYED <span>ALIYAN</span></div>
+
 <div class="nav">
-<a href="#home">Home</a><a href="#about">About</a>
-<a href="#skills">Skills</a><a href="#projects">Projects</a>
-<a href="#services">Services</a><a href="#contact">Contact</a>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#services">Services</a>
+<a href="#contact">Contact</a>
 </div>
 </nav>
 
+<!-- HERO -->
+
 <section id="home" class="hero">
+
 <div class="reveal">
+
 <small>CREATIVE WEB DEVELOPER</small>
+
 <h1>Syed <span>Aliyan</span></h1>
+
 <h2>Web Developer & Digital Creator</h2>
-<p>I create immersive, modern and memorable digital experiences for brands, businesses and ambitious people.</p>
+
+<p>
+I create immersive, modern and memorable digital experiences
+for brands, businesses and ambitious people.
+</p>
+
 <a class="btn" href="#projects">Explore My Work</a>
-<a class="btn" href="https://wa.me/923182477207" target="_blank">Let's Talk</a>
+
+<a class="btn"
+href="https://wa.me/923182477207"
+target="_blank">
+Let's Talk
+</a>
+
 </div>
 
 <div class="avatar reveal">
-<div class="photo"><img src="profile.jpg" alt="Syed Aliyan"></div>
+
+<div class="photo">
+<img src="profile.jpg" alt="Syed Aliyan">
 </div>
+
+</div>
+
 </section>
 
+<!-- MARQUEE -->
+
 <div class="marquee">
-<div>SYED ALIYAN ✦ WEB DEVELOPMENT ✦ CREATIVE DESIGN ✦ DIGITAL EXPERIENCE ✦ PREMIUM WEBSITES ✦ SYED ALIYAN ✦</div>
+<div>
+SYED ALIYAN ✦ WEB DEVELOPMENT ✦ CREATIVE DESIGN ✦ DIGITAL EXPERIENCE ✦ PREMIUM WEBSITES ✦ SYED ALIYAN ✦
+</div>
 </div>
 
+<!-- ABOUT -->
+
 <section id="about">
+
 <div class="title reveal">
 <h2>Beyond <span>Code</span></h2>
 <p>Design • Technology • Experience</p>
 </div>
+
 <div class="card reveal">
-<p>I am Syed Aliyan, a web developer focused on creating digital experiences that feel different. I combine clean code, visual design and interactive motion to create memorable websites.</p>
+
+<p>
+I am Syed Aliyan, a web developer focused on creating digital
+experiences that feel different. I combine clean code, visual
+design and interactive motion to create memorable websites.
+</p>
+
 </div>
+
 </section>
+
+<!-- SKILLS -->
 
 <section id="skills">
-<div class="title reveal"><h2>My <span>Skills</span></h2></div>
-<div class="skills">
-<div class="card reveal"><h3>HTML</h3><div class="bar"><i style="width:95%"></i></div></div>
-<div class="card reveal"><h3>CSS / UI</h3><div class="bar"><i style="width:92%"></i></div></div>
-<div class="card reveal"><h3>JavaScript</h3><div class="bar"><i style="width:78%"></i></div></div>
+
+<div class="title reveal">
+<h2>My <span>Skills</span></h2>
 </div>
+
+<div class="skills">
+
+<div class="card reveal">
+<h3>HTML</h3>
+<div class="bar">
+<i style="width:95%"></i>
+</div>
+</div>
+
+<div class="card reveal">
+<h3>CSS / UI</h3>
+<div class="bar">
+<i style="width:92%"></i>
+</div>
+</div>
+
+<div class="card reveal">
+<h3>JavaScript</h3>
+<div class="bar">
+<i style="width:78%"></i>
+</div>
+</div>
+
+</div>
+
 </section>
 
+<!-- PROJECTS -->
+
 <section id="projects">
+
 <div class="title reveal">
 <h2>My <span>Universe</span></h2>
 <p>Live creation + future experiences</p>
@@ -253,107 +620,305 @@ section{padding:80px 5%}
 
 <div class="projects">
 
-<a class="card project reveal" href="https://syedcollections-4.myshopify.com/" target="_blank">
-<div><div class="tag">● LIVE EXPERIENCE</div>
+<!-- LIVE PROJECT -->
+
+<a
+class="card project reveal"
+href="https://syedcollections-4.myshopify.com/"
+target="_blank"
+>
+
+<div>
+
+<div class="tag">● LIVE EXPERIENCE</div>
+
 <h3>SYED COLLECTION</h3>
-<p>Premium women's fashion Shopify store.</p></div>
+
+<p>
+Premium women's fashion Shopify store.
+</p>
+
+</div>
+
 <strong>ENTER STORE →</strong>
+
 </a>
 
-<div class="card project reveal" onclick="soon()">
-<div><div class="tag">COMING SOON</div>
+<!-- COMING SOON 1 -->
+
+<div
+class="card project reveal"
+onclick="soon()"
+>
+
+<div>
+
+<div class="tag">COMING SOON</div>
+
 <h3>BUSINESS EXPERIENCE</h3>
-<p>A premium digital experience for a modern brand.</p></div>
-<strong>DISCOVER →</strong>
+
+<p>
+A premium digital experience for a modern brand.
+</p>
+
 </div>
 
-<div class="card project reveal" onclick="soon()">
-<div><div class="tag">COMING SOON</div>
+<strong>DISCOVER →</strong>
+
+</div>
+
+<!-- COMING SOON 2 -->
+
+<div
+class="card project reveal"
+onclick="soon()"
+>
+
+<div>
+
+<div class="tag">COMING SOON</div>
+
 <h3>FUTURE LANDING</h3>
-<p>An immersive interactive landing experience.</p></div>
-<strong>DISCOVER →</strong>
+
+<p>
+An immersive interactive landing experience.
+</p>
+
 </div>
 
-<div class="card project reveal" onclick="soon()">
-<div><div class="tag">COMING SOON</div>
+<strong>DISCOVER →</strong>
+
+</div>
+
+<!-- COMING SOON 3 -->
+
+<div
+class="card project reveal"
+onclick="soon()"
+>
+
+<div>
+
+<div class="tag">COMING SOON</div>
+
 <h3>PERSONAL BRAND</h3>
-<p>A complete creative digital identity.</p></div>
+
+<p>
+A complete creative digital identity.
+</p>
+
+</div>
+
 <strong>DISCOVER →</strong>
+
 </div>
 
 </div>
+
 </section>
+
+<!-- SERVICES -->
 
 <section id="services">
-<div class="title reveal"><h2>What I <span>Build</span></h2></div>
-<div class="grid">
-<div class="card reveal"><h3>Web Development</h3><p>Responsive and professional websites.</p></div>
-<div class="card reveal"><h3>Creative UI</h3><p>Interfaces designed for memorable first impressions.</p></div>
-<div class="card reveal"><h3>Shopify Stores</h3><p>Premium storefronts for growing brands.</p></div>
+
+<div class="title reveal">
+<h2>What I <span>Build</span></h2>
 </div>
+
+<div class="grid">
+
+<div class="card reveal">
+<h3>Web Development</h3>
+<p>Responsive and professional websites.</p>
+</div>
+
+<div class="card reveal">
+<h3>Creative UI</h3>
+<p>Interfaces designed for memorable first impressions.</p>
+</div>
+
+<div class="card reveal">
+<h3>Shopify Stores</h3>
+<p>Premium storefronts for growing brands.</p>
+</div>
+
+</div>
+
 </section>
 
+<!-- MIND / TERMINAL -->
+
 <section>
-<div class="title reveal"><h2>Inside My <span>Mind</span></h2></div>
+
+<div class="title reveal">
+<h2>Inside My <span>Mind</span></h2>
+</div>
+
 <div class="terminal reveal">
+
 <b>syed@digital:~$</b> create --experience<br>
+
 ✓ Clean Architecture<br>
 ✓ Responsive Design<br>
 ✓ Interactive Motion<br>
 ✓ Premium Visuals<br>
 ✓ Client Focused<br>
 ✓ Always Learning<br>
+
 <b>syed@digital:~$</b> ready_to_build_
+
 </div>
+
 </section>
 
+<!-- CONTACT -->
+
 <section id="contact" class="contact">
+
 <div class="title reveal">
+
 <h2>Let's Create <span>Something</span></h2>
-<p>Have an idea? Let's turn it into a digital experience.</p>
+
+<p>
+Have an idea? Let's turn it into a digital experience.
+</p>
+
 </div>
 
 <div class="social reveal">
-<a class="btn" href="https://wa.me/923182477207" target="_blank">WhatsApp</a>
-<a class="btn" href="mailto:syedaliyan78@gmail.com">Email</a>
-<a class="btn" href="https://www.linkedin.com/in/syed-aliyan-ali-16712736a/" target="_blank">LinkedIn</a>
-<a class="btn" href="https://github.com/syedaliyanali78-a11y" target="_blank">GitHub</a>
-<a class="btn" href="https://syedaliyanali78-a11y.github.io/SYED-ALIYAN-PORTFOLIO/" target="_blank">Portfolio</a>
+
+<a
+class="btn"
+href="https://wa.me/923182477207"
+target="_blank">
+WhatsApp
+</a>
+
+<a
+class="btn"
+href="mailto:syedaliyan78@gmail.com">
+Email
+</a>
+
+<a
+class="btn"
+href="https://www.linkedin.com/in/syed-aliyan-ali-16712736a/"
+target="_blank">
+LinkedIn
+</a>
+
+<a
+class="btn"
+href="https://github.com/syedaliyanali78-a11y"
+target="_blank">
+GitHub
+</a>
+
+<a
+class="btn"
+href="https://syedaliyanali78-a11y.github.io/SYED-ALIYAN-PORTFOLIO/"
+target="_blank">
+Portfolio
+</a>
+
 </div>
+
 </section>
 
-<footer>© 2026 SYED ALIYAN — DIGITAL CREATOR</footer>
+<!-- FOOTER -->
+
+<footer>
+© 2026 SYED ALIYAN — DIGITAL CREATOR
+</footer>
+
+<!-- COMING SOON POPUP -->
 
 <div id="soon" onclick="closeSoon(event)">
+
 <div class="pop">
+
 <h2>COMING SOON</h2>
-<p>This experience is currently under development.</p>
-<p>Something special is being created ✦</p>
-<button class="btn close" onclick="closeSoon()">CLOSE</button>
+
+<p>
+This experience is currently under development.
+</p>
+
+<p>
+Something special is being created ✦
+</p>
+
+<button
+class="btn close"
+onclick="closeSoon()">
+CLOSE
+</button>
+
 </div>
+
 </div>
 
 <div id="cursor"></div>
 
 <script>
-setTimeout(()=>welcome.classList.add("hide"),1500);
 
-const io=new IntersectionObserver(x=>
-x.forEach(e=>e.isIntersecting&&e.target.classList.add("show")),
-{threshold:.12});
+/* WELCOME - 1.5 SECONDS */
 
-document.querySelectorAll(".reveal").forEach(e=>io.observe(e));
+setTimeout(()=>{
+welcome.classList.add("hide")
+},1500);
 
-function soon(){document.getElementById("soon").classList.add("show")}
-function closeSoon(e){
-if(!e||e.target.id=="soon"||e.target.tagName=="BUTTON")
-document.getElementById("soon").classList.remove("show")
+
+/* SCROLL REVEAL */
+
+const io=new IntersectionObserver(
+x=>x.forEach(e=>
+e.isIntersecting&&e.target.classList.add("show")
+),
+{threshold:.12}
+);
+
+document
+.querySelectorAll(".reveal")
+.forEach(e=>io.observe(e));
+
+
+/* COMING SOON */
+
+function soon(){
+document
+.getElementById("soon")
+.classList.add("show")
 }
 
+
+/* CLOSE POPUP */
+
+function closeSoon(e){
+
+if(
+!e ||
+e.target.id=="soon" ||
+e.target.tagName=="BUTTON"
+){
+document
+.getElementById("soon")
+.classList.remove("show")
+}
+
+}
+
+
+/* DESKTOP CURSOR */
+
 const c=document.getElementById("cursor");
+
 document.addEventListener("mousemove",e=>{
-c.style.left=e.clientX+"px";c.style.top=e.clientY+"px"
+
+c.style.left=e.clientX+"px";
+c.style.top=e.clientY+"px";
+
 });
+
 </script>
 
 </body>
